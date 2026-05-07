@@ -876,7 +876,6 @@ button {
 .service-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1010,7 +1009,28 @@ button {
   font-size: 3rem;
   margin-bottom: 1rem;
 } */
-.gear-thumb {
+.gear-thumb-camera {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: url("../camera.jpg") no-repeat center;
+  background-size: cover;
+}
+.gear-thumb-lighting {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: url("../lighting.jpg") no-repeat center;
+  background-size: cover;
+}
+.gear-thumb-lens {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: url("../lens.jpg") no-repeat center;
+  background-size: cover;
+}
+.gear-thumb-digital {
   width: 100%;
   height: 180px;
   border-radius: 12px;
