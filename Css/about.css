@@ -232,6 +232,7 @@ button {
   text-transform: uppercase;
   color: var(--brand-primary);
   margin-bottom: 0.75rem;
+  margin-top: 6%;
 }
 
 .section-tag::before {
@@ -270,9 +271,9 @@ button {
 
 .section-header {
   text-align: center;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
-  /* padding: 0 1rem; */
-   padding: var(--section-py) 0;
+  /* margin-bottom: clamp(2.5rem, 5vw, 4rem); */
+  /* padding: 0 1rem;
+   padding: var(--section-py) ; */
   
 }
 
@@ -981,20 +982,18 @@ button {
   padding: 2rem;
   border-radius: 16px;
   transition: 0.3s;
+  background-color: var(--bg-secondary);
 }
 
-.value-item:hover {
-  background: var(--bg-secondary);
-}
+
 
 .value-num {
+  color: var(--text-primary);
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 900;
-  opacity: 0.1;
   top: 10px;
   left: 10px;
-
 }
 
 .value-item h4 {

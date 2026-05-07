@@ -934,7 +934,11 @@ button {
   align-items: center;
   padding: var(--section-py) 0;
 }
-
+.offering-icon img {
+  width: 40px;      /* adjust size */
+  height: 40px;
+  object-fit: contain;
+}
 .visual-stack {
   position: relative;
 }
@@ -1002,9 +1006,16 @@ button {
   transform: translateY(-5px);
 }
 
-.gear-thumb {
+/* .gear-thumb {
   font-size: 3rem;
   margin-bottom: 1rem;
+} */
+.gear-thumb {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  background: url("../digital.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .gear-cat {

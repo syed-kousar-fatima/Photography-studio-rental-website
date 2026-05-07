@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FrameSpace | Luxury Photography Studio Dashboard</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Manage your premium photography studio rentals with FrameSpace. Exclusive access to luxury studio spaces and professional equipment.">
+    <meta name="description"
+        content="Manage your premium photography studio rentals with FrameSpace. Exclusive access to luxury studio spaces and professional equipment.">
     <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +17,21 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./Css/adminDashboard.css">
+      <link rel="icon" href="./logo.jpg" type="image/x-icon">
 </head>
+
 <body class="dark-mode"> <!-- Dark mode by default for premium cinematic feel -->
     <div class="app-container">
         <!-- Sidebar -->
         <aside id="sidebar" class="sidebar">
             <div class="sidebar-header">
-                <div class="logo">
-                    <img src="./logo.jpg" alt="Logo" class="logo-img">
-                    <span class="logo-text">Frame Space Studio</span>
+                <div class="logo-box">
+                    <a href="index.html" class="logo-link">
+                        <img src="./logo.jpg" alt="FrameSpace Studio Logo" class="logo-img">
+                        <span class="logo-text">
+                            FrameSpace<span class="logo-accent">Studio</span>
+                        </span>
+                    </a>
                 </div>
                 <button id="close-sidebar" class="sidebar-close-btn">
                     <i class="fas fa-times"></i>
@@ -32,31 +40,40 @@
             <nav class="sidebar-nav">
                 <ul class="nav-list">
                     <li class="nav-item active">
-                        <a href="#" class="nav-link" data-page="dashboard"><i class="fas fa-th-large"></i> <span>Dashboard</span></a>
+                        <a href="#" class="nav-link" data-page="dashboard"><i class="fas fa-th-large"></i>
+                            <span>Dashboard</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="book-studio"><i class="fas fa-camera"></i> <span>Book Studio</span></a>
+                        <a href="#" class="nav-link" data-page="book-studio"><i class="fas fa-camera"></i> <span>Book
+                                Studio</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="equipment"><i class="fas fa-tools"></i> <span>Equipment Rental</span></a>
+                        <a href="#" class="nav-link" data-page="equipment"><i class="fas fa-tools"></i> <span>Equipment
+                                Rental</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="history"><i class="fas fa-history"></i> <span>History</span></a>
+                        <a href="#" class="nav-link" data-page="history"><i class="fas fa-history"></i>
+                            <span>History</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="team"><i class="fas fa-users"></i> <span>Staff & Team</span></a>
+                        <a href="#" class="nav-link" data-page="team"><i class="fas fa-users"></i> <span>Staff &
+                                Team</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="portfolio"><i class="fas fa-images"></i> <span>Portfolio</span></a>
+                        <a href="#" class="nav-link" data-page="portfolio"><i class="fas fa-images"></i>
+                            <span>Portfolio</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="packages"><i class="fas fa-box-open"></i> <span>Packages</span></a>
+                        <a href="#" class="nav-link" data-page="packages"><i class="fas fa-box-open"></i>
+                            <span>Packages</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="support"><i class="fas fa-question-circle"></i> <span>Help & Support</span></a>
+                        <a href="#" class="nav-link" data-page="support"><i class="fas fa-question-circle"></i>
+                            <span>Help & Support</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-page="settings"><i class="fas fa-cog"></i> <span>Settings</span></a>
+                        <a href="#" class="nav-link" data-page="settings"><i class="fas fa-cog"></i>
+                            <span>Settings</span></a>
                     </li>
                 </ul>
             </nav>
@@ -83,7 +100,8 @@
                     </button>
                     <div class="profile-container">
                         <button id="profile-btn" class="profile-btn">
-                            <img src="https://ui-avatars.com/api/?name=Alex+Rivers&background=C5A059&color=fff" alt="User Profile" class="avatar">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Rivers&background=C5A059&color=fff"
+                                alt="User Profile" class="avatar">
                         </button>
                         <!-- Profile Dropdown -->
                         <div id="profile-dropdown" class="profile-dropdown">
@@ -188,7 +206,8 @@
                                                 <td><span class="status-badge status-pending">Pending</span></td>
                                             </tr>
                                             <tr>
-                                                <td><span class="studio-badge studio-c">Studio C (Minimalist)</span></td>
+                                                <td><span class="studio-badge studio-c">Studio C (Minimalist)</span>
+                                                </td>
                                                 <td>Julian Gray</td>
                                                 <td>Oct 26, 2023</td>
                                                 <td>10:00 - 14:00</td>
@@ -220,7 +239,8 @@
                             <div class="studio-card">
                                 <div class="studio-image">
                                     <div class="studio-tag">Best for Portraits</div>
-                                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=800" alt="Studio A">
+                                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=800"
+                                        alt="Studio A">
                                 </div>
                                 <div class="studio-info">
                                     <div class="studio-meta">
@@ -239,14 +259,16 @@
                             <div class="studio-card">
                                 <div class="studio-image">
                                     <div class="studio-tag">Natural Light</div>
-                                    <img src="https://images.unsplash.com/photo-1590076212674-329806456f4d?auto=format&fit=crop&q=80&w=800" alt="Studio B">
+                                    <img src="https://images.unsplash.com/photo-1590076212674-329806456f4d?auto=format&fit=crop&q=80&w=800"
+                                        alt="Studio B">
                                 </div>
                                 <div class="studio-info">
                                     <div class="studio-meta">
                                         <h3>Studio B: Daylight loft</h3>
                                         <span class="price-tag">$60/hr</span>
                                     </div>
-                                    <p>North-facing 10ft windows, hardwood floors, exposed brick, lifestyle furniture.</p>
+                                    <p>North-facing 10ft windows, hardwood floors, exposed brick, lifestyle furniture.
+                                    </p>
                                     <div class="studio-features">
                                         <span><i class="fas fa-sun"></i> Large Windows</span>
                                         <span><i class="fas fa-couch"></i> Furnished</span>
@@ -258,14 +280,16 @@
                             <div class="studio-card">
                                 <div class="studio-image">
                                     <div class="studio-tag">Product / Tabletop</div>
-                                    <img src="https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&q=80&w=800" alt="Studio C">
+                                    <img src="https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?auto=format&fit=crop&q=80&w=800"
+                                        alt="Studio C">
                                 </div>
                                 <div class="studio-info">
                                     <div class="studio-meta">
                                         <h3>Studio C: The Dark Room</h3>
                                         <span class="price-tag">$50/hr</span>
                                     </div>
-                                    <p>Fully blacked out environment, overhead grip rail, makeup station, client area.</p>
+                                    <p>Fully blacked out environment, overhead grip rail, makeup station, client area.
+                                    </p>
                                     <div class="studio-features">
                                         <span><i class="fas fa-moon"></i> Blacked Out</span>
                                         <span><i class="fas fa-tools"></i> Grip Rail</span>
@@ -342,7 +366,7 @@
                     <div class="dashboard-body">
                         <h2>Rental & Booking History</h2>
                         <p class="section-intro">Track your past sessions and equipment usage.</p>
-                        
+
                         <div class="card">
                             <div class="card-header">
                                 <h3>Total Lifetime Spend: $8,420</h3>
@@ -368,21 +392,24 @@
                                             <td>Studio A + Profoto Kit</td>
                                             <td>Sep 12, 2023</td>
                                             <td>$420.00</td>
-                                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                                            <td><button class="download-btn"><i class="fas fa-download"></i>
+                                                    PDF</button></td>
                                         </tr>
                                         <tr>
                                             <td>#FS-2751</td>
                                             <td>Studio B (Natural Light)</td>
                                             <td>Aug 24, 2023</td>
                                             <td>$180.00</td>
-                                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                                            <td><button class="download-btn"><i class="fas fa-download"></i>
+                                                    PDF</button></td>
                                         </tr>
                                         <tr>
                                             <td>#FS-2680</td>
                                             <td>Macro Lens + 2x C-Stands</td>
                                             <td>Aug 05, 2023</td>
                                             <td>$85.00</td>
-                                            <td><button class="download-btn"><i class="fas fa-download"></i> PDF</button></td>
+                                            <td><button class="download-btn"><i class="fas fa-download"></i>
+                                                    PDF</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -417,7 +444,8 @@
                                 <h3><i class="fas fa-bell"></i> Notifications</h3>
                                 <div class="switch-item">
                                     <span>Booking Confirmations</span>
-                                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    <label class="switch"><input type="checkbox" checked><span
+                                            class="slider"></span></label>
                                 </div>
                                 <div class="switch-item">
                                     <span>Promotional Offers</span>
@@ -425,7 +453,8 @@
                                 </div>
                                 <div class="switch-item">
                                     <span>Equipment Status</span>
-                                    <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    <label class="switch"><input type="checkbox" checked><span
+                                            class="slider"></span></label>
                                 </div>
                             </div>
 
@@ -445,14 +474,16 @@
                         <p class="section-intro">Manage your crew and assistants for upcoming shoots.</p>
                         <div class="staff-grid">
                             <div class="card staff-card">
-                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=C5A059&color=fff" alt="Sarah" class="staff-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=C5A059&color=fff"
+                                    alt="Sarah" class="staff-avatar">
                                 <h4>Sarah Chen</h4>
                                 <p>Lead Studio Assistant</p>
                                 <div class="badge">Available</div>
                                 <button class="contact-btn"><i class="fas fa-envelope"></i> Message</button>
                             </div>
                             <div class="card staff-card">
-                                <img src="https://ui-avatars.com/api/?name=James+Hait&background=1496ff&color=fff" alt="James" class="staff-avatar">
+                                <img src="https://ui-avatars.com/api/?name=James+Hait&background=1496ff&color=fff"
+                                    alt="James" class="staff-avatar">
                                 <h4>James Hait</h4>
                                 <p>Digital Tech / Retoucher</p>
                                 <div class="badge">On Shoot</div>
@@ -477,10 +508,18 @@
                             <button class="save-btn"><i class="fas fa-upload"></i> Upload Raw</button>
                         </div>
                         <div class="gallery-grid">
-                            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=400"></div>
-                            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=400"></div>
-                            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=400"></div>
-                            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=400"></div>
+                            <div class="gallery-item"><img
+                                    src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=400">
+                            </div>
+                            <div class="gallery-item"><img
+                                    src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?auto=format&fit=crop&q=80&w=400">
+                            </div>
+                            <div class="gallery-item"><img
+                                    src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&q=80&w=400">
+                            </div>
+                            <div class="gallery-item"><img
+                                    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=400">
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -524,11 +563,13 @@
                         <div class="faq-list">
                             <div class="card faq-item">
                                 <h4>How do I extend my booking?</h4>
-                                <p>You can request an extension via the dashboard up to 30 minutes before your session ends, subject to availability.</p>
+                                <p>You can request an extension via the dashboard up to 30 minutes before your session
+                                    ends, subject to availability.</p>
                             </div>
                             <div class="card faq-item">
                                 <h4>What is the cancellation policy?</h4>
-                                <p>Full refund for cancellations made 48 hours in advance. 50% refund within 24 hours.</p>
+                                <p>Full refund for cancellations made 48 hours in advance. 50% refund within 24 hours.
+                                </p>
                             </div>
                         </div>
                         <div class="support-contact">
@@ -545,4 +586,5 @@
 
     <script src="./Js/adminDashboard.js"></script>
 </body>
+
 </html>

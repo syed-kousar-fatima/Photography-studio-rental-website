@@ -1,6 +1,8 @@
 /* Root Variables */
 :root {
     /* Dark Mode (Default Premium Cinematic Theme) */
+     --font-display: 'Playfair Display', serif;
+  --brand-primary:#C8973A;
     --bg-primary: #0a0a0a;
     --bg-secondary: #121212;
     --bg-accent: #1e1e1e;
@@ -112,30 +114,44 @@ button {
     border-bottom: 1px solid var(--border);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    white-space: nowrap; /* Forces one line */
-}
+.logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
 
-.logo-img {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-}
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
 
-.logo-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .logo-img {
+            width: 36px;
+            /* adjust as needed */
+            height: 36px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
 
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
 
-
+        .logo-accent {
+            color: var(--brand-primary);
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
 .sidebar-close-btn {
     display: none;
     color: var(--text-primary);
