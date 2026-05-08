@@ -112,7 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const speed = 2000 / target;
           
           const updateCount = () => {
-            const increment = target / 100;
+            // const increment = target / 100;
+            const increment = Math.max(target / 100, 1,3,2);
+
             if (count < target) {
               count += increment;
               entry.target.innerText = Math.ceil(count);
@@ -131,30 +133,59 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.stat-number').forEach(num => countObserver.observe(num));
   });
 
-  const counters = document.querySelectorAll('.stat-number');
+  document.addEventListener("DOMContentLoaded", () => {
 
-counters.forEach(counter => {
-  const target = +counter.getAttribute('data-target');
-  const suffix = counter.getAttribute('data-suffix') || '';
+  const counters = document.querySelectorAll(".stat-number");
 
-  let count = 0;
+  const counterObserver = new IntersectionObserver((entries, observer) => {
 
-  const updateCounter = () => {
-    const increment = target / 100;
+    entries.forEach(entry => {
 
-    if (count < target) {
-      count += increment;
-      counter.innerText = Math.floor(count).toLocaleString() + suffix; // ✅ always show suffix
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.innerText = target.toLocaleString() + suffix; // ✅ final with suffix
-    }
-  };
+      if (entry.isIntersecting) {
 
-  // ✅ show suffix immediately at start
-  counter.innerText = '0' + suffix;
+        const counter = entry.target;
 
-  updateCounter();
+        const target = +counter.getAttribute("data-target");
+        const suffix = counter.getAttribute("data-suffix") || "";
+
+        let count = 0;
+        const increment = target / 100;
+//  const increment = Math.max(target / 100, 1,2,3);
+
+        // Show initial value with suffix
+        counter.innerText = "0" + suffix;
+
+        const updateCounter = () => {
+
+          count += increment;
+
+          if (count < target) {
+            counter.innerText =
+              Math.floor(count).toLocaleString() + suffix;
+
+            requestAnimationFrame(updateCounter);
+
+          } else {
+            counter.innerText =
+              target.toLocaleString() + suffix;
+          }
+        };
+
+        updateCounter();
+
+        observer.unobserve(counter);
+      }
+
+    });
+
+  }, {
+    threshold: 0.5
+  });
+
+  counters.forEach(counter => {
+    counterObserver.observe(counter);
+  });
+
 });
 
 document.addEventListener("DOMContentLoaded", () => {

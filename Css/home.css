@@ -901,7 +901,9 @@ button {
   width: 30px;
   border-radius: 5px;
 }
-
+.tab-content{
+  display: flex;
+}
 .tabs-nav {
   display: flex;
   justify-content: center;
@@ -942,13 +944,13 @@ button {
 }
 
 .tab-pane.active {
-  display: grid;
+  display: flex;
 }
 
 .tab-collage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 20px;
 }
 
 .c-main {

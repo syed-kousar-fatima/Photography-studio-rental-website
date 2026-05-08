@@ -831,7 +831,13 @@ button {
   justify-content: center;
   text-align: center;
   position: relative;
+  background: url("../about-bg.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
 }
+
 
 .gradient-text {
   background: linear-gradient(45deg, var(--brand-primary), var(--brand-accent));
