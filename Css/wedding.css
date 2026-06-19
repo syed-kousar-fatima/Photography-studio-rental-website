@@ -11,6 +11,7 @@
   --brand-primary-dark: #A67828;
   --brand-accent: #E8B045;
   --brand-glow: rgba(200, 151, 58, 0.3);
+  --overlay: rgba(255,255,255,0.45);
 
   /* Light Mode */
   --bg-primary: #FFFFFF;
@@ -66,6 +67,7 @@
   --shadow-brand: 0 8px 32px rgba(200, 151, 58, 0.2);
   --header-bg: rgba(17, 17, 16, 0.93);
   --header-border: rgba(255, 255, 255, 0.07);
+   --overlay: rgba(0,0,0,0.55);
 }
 
 /* ===== RESET & BASE ===== */
@@ -183,13 +185,14 @@ button {
 
 .btn-outline-white {
   background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.7);
+  color:var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: white;
+  text-decoration-color: var(--brand-primary);
+  background:var(--brand-primary);
+  color: white;  
 }
 
 .btn-white {
@@ -205,7 +208,7 @@ button {
 }
 
 .btn-lg {
-  padding: 0.9rem 2rem;
+  padding: 0.6rem;
   font-size: 1rem;
   min-height: 52px;
 }
@@ -215,6 +218,7 @@ button {
   font-size: 0.82rem;
   min-height: 36px;
 }
+
 
 .w-full {
   width: 100%;
@@ -445,7 +449,7 @@ button {
   color: var(--text-secondary);
   transition: color var(--transition-fast), background var(--transition-fast);
   background: transparent;
-  border: none;
+border: solid 2px var(--brand-primary);
   cursor: pointer;
 }
 
@@ -920,7 +924,7 @@ button {
   border-radius: 16px;
   z-index: 3;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--brand-primary);
 }
 
 .floating-info-card span {
@@ -945,9 +949,9 @@ button {
 }
 
 .eco-card {
-  background: var(--bg-card);
+  background: var(--brand-primary);
   border-radius: 32px;
-  border: 1px solid var(--border-color);
+  border: 2px solid #C8973A;
   overflow: hidden;
   transition: 0.4s ease;
 }
@@ -987,6 +991,7 @@ button {
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
+  border: 1px solid var(--brand-primary);
 }
 
 .eco-content {
@@ -997,6 +1002,10 @@ button {
   font-family: var(--font-display);
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  text-align: center;
+}
+.eco-content h3:hover{
+  color: var(--brand-primary);
 }
 
 .eco-list {
@@ -1004,6 +1013,9 @@ button {
   margin: 1.5rem 0 2rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
+  text-align: center;
+  display: block;
+ 
 }
 
 .eco-list li {
@@ -1012,7 +1024,11 @@ button {
   align-items: center;
   gap: 10px;
 }
-
+.btn-sm.btn-primary {
+    display: block;
+    margin: 1rem auto 0;
+    border-radius: 10px;
+}
 .eco-list li::before {
   content: '→';
   color: var(--brand-primary);
@@ -1026,9 +1042,12 @@ button {
   overflow: hidden;
   padding: 6rem 4rem;
   text-align: center;
-  background: url('wedding-bg.jpg') center/cover;
+  background:  linear-gradient(var(--overlay), var(--overlay)),
+    url('../wedding-bg.jpg') center/cover no-repeat;
   color:#ffffff;
   margin-top: 4rem;
+  border: 1px solid #C8973A;
+  margin-bottom: 4rem;
 }
 
 .cta-overlay {

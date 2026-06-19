@@ -177,20 +177,23 @@ button {
 }
 
 .btn-outline:hover {
+  color: white;
   background: var(--brand-primary);
-  color: #fff;
+  
   transform: translateY(-1px);
 }
 
 .btn-outline-white {
   background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.7);
+  color:var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: white;
+  text-decoration-color: var(--brand-primary);
+  background:var(--brand-primary);
+  color: white;
+   
 }
 
 .btn-white {
@@ -206,7 +209,7 @@ button {
 }
 
 .btn-lg {
-  padding: 0.9rem 2rem;
+  padding: 0.6rem;
   font-size: 1rem;
   min-height: 52px;
 }
@@ -216,7 +219,6 @@ button {
   font-size: 0.82rem;
   min-height: 36px;
 }
-
 .w-full {
   width: 100%;
   justify-content: center;
@@ -447,8 +449,9 @@ button {
   color: var(--text-secondary);
   transition: color var(--transition-fast), background var(--transition-fast);
   background: transparent;
-  border: none;
+border: solid 2px var(--brand-primary);
   cursor: pointer;
+
 }
 
 .icon-btn:hover {
@@ -823,9 +826,11 @@ button {
   }
 }
 
-
+.hero-accent{
+  color: var(--brand-primary);
+}
 .about-hero {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -927,19 +932,23 @@ button {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
+
 }
 
 .hist-stat strong {
   display: block;
+  justify-content: center;
   font-size: 2rem;
   font-family: var(--font-display);
   color: var(--brand-primary);
+
 }
 
 .hist-stat span {
   font-size: 0.8rem;
   text-transform: uppercase;
   color: var(--text-muted);
+
 }
 
 
@@ -948,6 +957,7 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: var(--section-py) 0;
+  align-items: center;
 }
 
 .vm-card {
@@ -967,12 +977,18 @@ button {
 .vm-icon {
   color: var(--brand-primary);
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .vm-card h3 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   margin-bottom: 1rem;
+  text-align: center;
+}
+.vm-card p {
+ 
+  text-align: center;
 }
 
 
@@ -989,6 +1005,7 @@ button {
   border-radius: 16px;
   transition: 0.3s;
   background-color: var(--bg-secondary);
+  box-shadow: 2px 2px 2px 1px var(--brand-primary);
 }
 
 
@@ -1018,6 +1035,8 @@ button {
   position: relative;
   overflow: hidden;
   padding: 2rem 0;
+
+
 }
 
 .testi-card {
@@ -1027,6 +1046,10 @@ button {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+
+}
+.testi-card:hover{
+  background-color: var(--brand-primary);
 }
 
 .testi-card blockquote {
@@ -1086,7 +1109,7 @@ button {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: var(--brand-glow);
+  background: var(--brand-primary);
   top: 20px;
   right: -20px;
   border-radius: 24px;

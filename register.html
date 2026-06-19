@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | FrameSpace Studio</title>
-  <link rel="icon" href="./logo.jpg" type="image/x-icon">
+    <link rel="icon" href="./logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -20,7 +20,7 @@
             --input-bg: #f1f5f9;
             --error-red: #ef4444;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-             --font-display: 'Playfair Display', serif;
+            --font-display: 'Playfair Display', serif;
         }
 
         [data-theme="dark"] {
@@ -314,7 +314,35 @@
             text-decoration: none;
             font-weight: 700;
         }
+        
+.auth-card {
+    width: 100%;
+    max-width: 560px;
+    padding: 2.5rem;
+    border-radius: 20px;
+}
 
+/* First Name + Last Name Row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    margin-bottom: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .auth-card {
+        max-width: 420px;
+    }
+}
         @media (max-width: 1024px) {
             .auth-card {
                 max-width: 440px;
@@ -377,16 +405,20 @@
         </div>
 
         <form id="signupForm" novalidate>
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" class="form-input" placeholder="e.g. John" required>
-                <span class="error-text">First name is required.</span>
-            </div>
+            <div class="form-row">
 
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" class="form-input" placeholder="e.g. Doe" required>
-                <span class="error-text">Last name is required.</span>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-input" placeholder="Enter your FirstName" required>
+                    <span class="error-text">First name is required.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" class="form-input" placeholder="Enter your LastName" required>
+                    <span class="error-text">Last name is required.</span>
+                </div>
+
             </div>
 
             <div class="form-group">
@@ -412,10 +444,10 @@
 
         <div class="social-grid">
             <button class="btn-social">
-                <i class="fab fa-google" style="color: #DB4437;"></i> Google
+                <i class="fab fa-google" style="color: var(--brand-primary);"></i> Google
             </button>
             <button class="btn-social">
-                <i class="fab fa-apple"></i> Apple
+                <i class="fab fa-apple" style="color: var(--brand-primary);"></i> Apple
             </button>
         </div>
 

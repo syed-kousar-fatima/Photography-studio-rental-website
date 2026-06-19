@@ -114,6 +114,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
+  border: solid 2px var(--brand-primary);
   color: var(--text-secondary);
   transition: color var(--transition-fast), background var(--transition-fast);
 }

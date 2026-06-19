@@ -155,64 +155,66 @@ button {
 }
 
 .btn-primary {
-    background: var(--brand-primary);
-    color: #fff;
-    border-color: var(--brand-primary);
+  background: var(--brand-primary);
+  color: #fff;
+  border-color: var(--brand-primary);
 }
 
 .btn-primary:hover {
-    background: var(--brand-primary-dark);
-    border-color: var(--brand-primary-dark);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-brand);
+  background: var(--brand-primary-dark);
+  border-color: var(--brand-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-brand);
 }
 
 .btn-outline {
-    background: transparent;
-    color: var(--brand-primary);
-    border-color: var(--brand-primary);
+  background: transparent;
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .btn-outline:hover {
-    background: var(--brand-primary);
-    color: #fff;
-    transform: translateY(-1px);
+  background: var(--brand-primary);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .btn-outline-white {
-    background: transparent;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color:var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .btn-outline-white:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: white;
+  text-decoration-color: var(--brand-primary);
+  background:var(--brand-primary);
+  color: white;  
 }
 
 .btn-white {
-    background: white;
-    color: #1A1A18;
-    border-color: white;
-    font-size: 0.85rem;
-    padding: 0.5rem 1.1rem;
+  background: white;
+  color: #1A1A18;
+  border-color: white;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.1rem;
 }
 
 .btn-white:hover {
-    background: #f0efeb;
+  background: #f0efeb;
 }
 
 .btn-lg {
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
-    min-height: 52px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  min-height: 52px;
 }
 
 .btn-sm {
-    padding: 0.5rem 1rem;
-    font-size: 0.82rem;
-    min-height: 36px;
+  padding: 0.5rem 1rem;
+  font-size: 0.82rem;
+  min-height: 36px;
 }
+
 
 .w-full {
     width: 100%;
@@ -441,7 +443,7 @@ button {
     color: var(--text-secondary);
     transition: color var(--transition-fast), background var(--transition-fast);
     background: transparent;
-    border: none;
+  border: solid 2px var(--brand-primary);
     cursor: pointer;
 }
 

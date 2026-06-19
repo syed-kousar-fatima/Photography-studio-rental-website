@@ -181,13 +181,14 @@ button {
 
 .btn-outline-white {
   background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.7);
+  color:var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: white;
+  text-decoration-color: var(--brand-primary);
+  background:var(--brand-primary);
+  color: white;  
 }
 
 .btn-white {
@@ -203,7 +204,7 @@ button {
 }
 
 .btn-lg {
-  padding: 0.9rem 2rem;
+  padding: 0.6rem;
   font-size: 1rem;
   min-height: 52px;
 }
@@ -213,6 +214,7 @@ button {
   font-size: 0.82rem;
   min-height: 36px;
 }
+
 
 .w-full {
   width: 100%;
@@ -441,7 +443,7 @@ button {
   color: var(--text-secondary);
   transition: color var(--transition-fast), background var(--transition-fast);
   background: transparent;
-  border: none;
+ border: solid 2px var(--brand-primary);
   cursor: pointer;
 }
 
@@ -860,7 +862,7 @@ button {
   justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 0 var(--container-pad);
+  /* padding: 0 var(--container-pad); */
 }
 
 .hero-headline {
@@ -869,9 +871,11 @@ button {
   margin-bottom: 1.5rem;
   font-family: var(--font-display);
 }
-
+.hero-ctas{
+  margin-top: 5%;
+}
 .gradient-text {
-  background: linear-gradient(to right, #fff, var(--brand-accent), #fff);
+  background: linear-gradient(to right, var(--brand-primary), var(--brand-accent), var(--brand-primary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -903,6 +907,9 @@ button {
 }
 .tab-content{
   display: flex;
+}
+.tab-content-wrap{
+  padding-left: 6rem;
 }
 .tabs-nav {
   display: flex;
@@ -984,7 +991,7 @@ button {
 
 .packages-section {
   background: #0a0a09;
-  padding: var(--section-py) 0;
+  /* padding: var(--section-py) 0; */
   background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 40px 40px;
 }
@@ -996,10 +1003,10 @@ button {
 }
 
 .pkg-card {
-  background: #151513;
+  /* background: #151513; */
   padding: 3rem 2rem;
   border-radius: 24px;
-  border: 1px solid #222;
+  border: 2px solid #C8973A;
   position: relative;
   transition: 0.4s;
   color: #fff;
@@ -1008,6 +1015,9 @@ button {
 .pkg-card.featured {
   border-color: var(--brand-primary);
   transform: scale(1.05);
+}
+.pkg-header h3{
+  text-align: center;
 }
 
 .best-value-badge {
@@ -1028,8 +1038,9 @@ button {
   font-family: var(--font-display);
   font-size: 3rem;
   font-weight: 800;
-  color: var(--brand-accent);
+  color: var(--brand-primary);
   margin: 0.5rem 0;
+  text-align: center;
 }
 
 .pkg-list {
@@ -1037,8 +1048,8 @@ button {
   margin: 2rem 0;
   color: #aaa;
   font-size: 0.9rem;
+  text-align: center;
 }
-
 .pkg-list li {
   margin-bottom: 10px;
 }
@@ -1053,20 +1064,23 @@ button {
 .asymmetric-collage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .zoom-hover {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   border-radius: 8px;
   transition: 0.5s;
+  border: 1px solid var(--brand-primary);
+
 }
 
 .zoom-hover:hover {
   transform: scale(1.1);
   z-index: 2;
+    box-shadow: 2px 2px 2px 2px var(--brand-primary);
 }
 
 .bts-item {
@@ -1173,7 +1187,7 @@ button {
 }
 
 .portfolio-strip-wrap {
-  background: #000;
+  background: var(--brand-primary);
   padding: 4rem 0;
   overflow: hidden;
   position: relative;
@@ -1239,6 +1253,17 @@ button {
   background: var(--bg-card);
   padding: 1.5rem;
   border-radius: 20px;
+  border: 1px solid var(--brand-primary);
+}
+.blog-card{
+   border-radius: 20px;
+  border: 1px solid var(--brand-primary);
+  padding: 1.5rem;
+  align-items: center;
+}
+.blog-card img{
+  border-radius: 20px;
+  width: 100%;
 }
 
 .blog-card.wide img {
@@ -1256,10 +1281,10 @@ button {
 
 
 .booking-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/assets/generated/studio-dark.jpg');
+  background: linear-gradient(var(--brand-primary)), url('/assets/generated/studio-dark.jpg');
   background-size: cover;
   color: #fff;
-  padding: var(--section-py) 0;
+  /* padding: var(--section-py) 0; */
 }
 
 .booking-wrapper {

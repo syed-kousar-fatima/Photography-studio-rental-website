@@ -185,13 +185,14 @@ button {
 
 .btn-outline-white {
   background: transparent;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.7);
+  color:var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: white;
+  text-decoration-color: var(--brand-primary);
+  background:var(--brand-primary);
+  color: white;  
 }
 
 .btn-white {
@@ -207,7 +208,7 @@ button {
 }
 
 .btn-lg {
-  padding: 0.9rem 2rem;
+  padding: 0.6rem;
   font-size: 1rem;
   min-height: 52px;
 }
@@ -217,6 +218,7 @@ button {
   font-size: 0.82rem;
   min-height: 36px;
 }
+
 
 .w-full {
   width: 100%;
@@ -447,7 +449,7 @@ button {
   color: var(--text-secondary);
   transition: color var(--transition-fast), background var(--transition-fast);
   background: transparent;
-  border: none;
+ border: solid 2px var(--brand-primary);
   cursor: pointer;
 }
 
@@ -936,6 +938,7 @@ button {
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-subtle);
   text-align: center;
+  border: 1px solid var(--brand-primary);
 }
 
 .comfort-icon {
@@ -1045,7 +1048,7 @@ button {
 
 /* Milestone CTA Bar */
 .milestone-cta-bar {
-  margin-top: 2rem;
+  margin: 2rem;
   padding: 4rem;
   background: var(--text-primary);
   color: var(--bg-primary);
