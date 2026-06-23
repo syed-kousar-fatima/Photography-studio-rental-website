@@ -48,9 +48,11 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 32px;
+  --about-overlay: rgba(255, 255, 255, 0.45);
 }
 
 [data-theme="dark"] {
+   --about-overlay: rgba(8, 10, 14, 0.38);
   --bg-primary: #111110;
   --bg-secondary: #1A1A18;
   --bg-tertiary: #222220;
@@ -836,12 +838,20 @@ border: solid 2px var(--brand-primary);
   justify-content: center;
   text-align: center;
   position: relative;
-  background: url("../about-bg.jpg");
+   background:
+    linear-gradient(
+      var(--about-overlay),
+      var(--about-overlay)
+    ),
+    url("../about-bg.jpg") center center / cover no-repeat; 
+  
+
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-
 }
+
+
 
 
 .gradient-text {
