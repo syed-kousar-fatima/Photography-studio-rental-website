@@ -34,6 +34,39 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section[id]");
+
+function updateActiveNav() {
+
+    const scrollPos = window.scrollY + 120;
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            current = section.id;
+        }
+
+    });
+
+    navLinks.forEach(link => link.classList.remove("active"));
+
+    if (window.location.pathname.includes("blog.html") || window.location.pathname === "/") {
+
+        document.querySelector('.nav-link[href="blog.html"]')
+            ?.classList.add("active");
+
+    }
+
+}
+
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
 
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileNav = document.getElementById('mobileNav');
@@ -60,28 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
-
-  const updateActiveNav = () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop <= 100) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current) && current !== '') {
-        link.classList.add('active');
-      }
-    });
-  };
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
 
 });
 

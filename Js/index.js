@@ -35,29 +35,39 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section[id]");
 
+function updateActiveNav() {
 
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id], footer[id]');
+    const scrollPos = window.scrollY + 120;
 
-  const updateActiveNav = () => {
-    let current = '';
+    let current = "";
+
     sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop <= 80) {
-        current = section.getAttribute('id');
-      }
+
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            current = section.id;
+        }
+
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  };
+    navLinks.forEach(link => link.classList.remove("active"));
 
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
+    if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+
+        document.querySelector('.nav-link[href="index.html"]')
+            ?.classList.add("active");
+
+    }
+
+}
+
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
 
 
   const hamburgerBtn = document.getElementById('hamburgerBtn');

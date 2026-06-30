@@ -62,27 +62,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+ 
+  
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section[id]");
 
-  const updateActiveNav = () => {
-    let current = '';
+function updateActiveNav() {
+
+    const scrollPos = window.scrollY + 120;
+
+    let current = "";
+
     sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop <= 100) {
-        current = section.getAttribute('id');
-      }
+
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            current = section.id;
+        }
+
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(current) && current !== '') {
-        link.classList.add('active');
-      }
-    });
-  };
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
+    navLinks.forEach(link => link.classList.remove("active"));
 
+    if (window.location.pathname.includes("contact.html") || window.location.pathname === "/") {
+
+        document.querySelector('.nav-link[href="contact.html"]')
+            ?.classList.add("active");
+
+    }
+
+}
+
+window.addEventListener("scroll", updateActiveNav);
+window.addEventListener("load", updateActiveNav);
 });
 
   document.addEventListener('DOMContentLoaded', () => {

@@ -52,7 +52,7 @@
 }
 
 [data-theme="dark"] {
-   --about-overlay: rgba(8, 10, 14, 0.38);
+   --about-overlay: rgba(14, 14, 12,.72);
   --bg-primary: #111110;
   --bg-secondary: #1A1A18;
   --bg-tertiary: #222220;
@@ -392,6 +392,9 @@ button {
 .nav-link.active {
   color: var(--brand-primary);
   background: rgba(200, 151, 58, 0.08);
+}
+.nav-link.active::after{
+    width:100%;
 }
 .nav-item{
   position:relative;
@@ -843,7 +846,7 @@ border: solid 2px var(--brand-primary);
       var(--about-overlay),
       var(--about-overlay)
     ),
-    url("../about-bg.jpg") center center / cover no-repeat; 
+    url("../about-bg.png") center center / cover no-repeat; 
   
 
   background-size: cover;
