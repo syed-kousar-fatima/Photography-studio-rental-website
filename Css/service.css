@@ -845,7 +845,7 @@ button {
   height: 100vh;
     background:
     linear-gradient(var(--service-overlay), var(--service-overlay)),
-    url("../services-bg.jpg") center/cover no-repeat;
+    url("../services-bg.png") center/cover no-repeat;
 
 }
 
