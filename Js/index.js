@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  
-const navLinks = document.querySelectorAll(".nav-link");
-const sections = document.querySelectorAll("section[id]");
 
-function updateActiveNav() {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section[id]");
+
+  function updateActiveNav() {
 
     const scrollPos = window.scrollY + 120;
 
@@ -48,12 +48,12 @@ function updateActiveNav() {
 
     sections.forEach(section => {
 
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
 
-        if (scrollPos >= top && scrollPos < bottom) {
-            current = section.id;
-        }
+      if (scrollPos >= top && scrollPos < bottom) {
+        current = section.id;
+      }
 
     });
 
@@ -67,20 +67,20 @@ function updateActiveNav() {
     // }
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-navLinks.forEach(link => {
-    link.classList.remove("active");
+    navLinks.forEach(link => {
+      link.classList.remove("active");
 
-    const href = link.getAttribute("href");
+      const href = link.getAttribute("href");
 
-    if (href === currentPage) {
+      if (href === currentPage) {
         link.classList.add("active");
-    }
-});
+      }
+    });
 
-}
+  }
 
-window.addEventListener("scroll", updateActiveNav);
-window.addEventListener("load", updateActiveNav);
+  window.addEventListener("scroll", updateActiveNav);
+  window.addEventListener("load", updateActiveNav);
 
 
   const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -111,7 +111,7 @@ window.addEventListener("load", updateActiveNav);
       link.addEventListener('click', closeMobileMenu);
     });
 
-  
+
     document.addEventListener('click', (e) => {
       if (!header?.contains(e.target)) {
         closeMobileMenu();
@@ -232,7 +232,7 @@ window.addEventListener("load", updateActiveNav);
         const hourly = el.dataset.hourly;
         const daily = el.dataset.daily;
 
-  
+
         el.style.transform = 'translateY(-10px)';
         el.style.opacity = '0';
 
@@ -281,7 +281,7 @@ window.addEventListener("load", updateActiveNav);
     let visibleCount = getVisibleCount();
     const totalGroups = () => Math.ceil(cards.length / visibleCount);
 
-    
+
     const buildDots = () => {
       if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
@@ -306,7 +306,7 @@ window.addEventListener("load", updateActiveNav);
       const count = totalGroups();
       currentIndex = ((index % count) + count) % count;
 
-      
+
       cards.forEach((card, i) => {
         const start = currentIndex * visibleCount;
         const end = start + visibleCount;
@@ -316,14 +316,14 @@ window.addEventListener("load", updateActiveNav);
       updateDots();
     };
 
-    
+
     const initCarousel = () => {
       visibleCount = getVisibleCount();
 
-   
+
       carousel.style.gridTemplateColumns = `repeat(${visibleCount}, 1fr)`;
 
- 
+
       if (currentIndex >= totalGroups()) currentIndex = 0;
 
       buildDots();
@@ -340,7 +340,7 @@ window.addEventListener("load", updateActiveNav);
       resetAutoPlay();
     });
 
-    
+
     const startAutoPlay = () => {
       autoPlayTimer = setInterval(() => {
         goToGroup(currentIndex + 1);
@@ -359,7 +359,7 @@ window.addEventListener("load", updateActiveNav);
       startAutoPlay();
     };
 
-  
+
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 
@@ -383,14 +383,14 @@ window.addEventListener("load", updateActiveNav);
       }
     }, { passive: true });
 
- 
+
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(initCarousel, 200);
     });
 
-    
+
     initCarousel();
     startAutoPlay();
   }
@@ -439,7 +439,7 @@ window.addEventListener("load", updateActiveNav);
   }
 
   document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
 
       const href = this.getAttribute('href');
