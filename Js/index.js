@@ -59,12 +59,23 @@ function updateActiveNav() {
 
     navLinks.forEach(link => link.classList.remove("active"));
 
-    if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+    // if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
 
-        document.querySelector('.nav-link[href="index.html"]')
-            ?.classList.add("active");
+    //     document.querySelector('.nav-link[href="index.html"]')
+    //         ?.classList.add("active");
 
+    // }
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    const href = link.getAttribute("href");
+
+    if (href === currentPage) {
+        link.classList.add("active");
     }
+});
 
 }
 

@@ -56,12 +56,17 @@ function updateActiveNav() {
 
     navLinks.forEach(link => link.classList.remove("active"));
 
-    if (window.location.pathname.includes("about.html") || window.location.pathname === "/") {
+    const currentPage = window.location.pathname.split("/").pop() || "about.html";
 
-        document.querySelector('.nav-link[href="about.html"]')
-            ?.classList.add("active");
+    navLinks.forEach(link => {
+      link.classList.remove("active");
 
-    }
+      const href = link.getAttribute("href");
+
+      if (href === currentPage) {
+        link.classList.add("active");
+      }
+    });
 
 }
 
