@@ -371,6 +371,7 @@ button {
 
 .nav-link.active::after{
     width:100%;
+    color: var(--brand-primary);
 }
 .nav-item{
   position:relative;
