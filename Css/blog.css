@@ -859,7 +859,7 @@ button {
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
   transition: 0.4s;
-  height: 80vh;
+  height: 70vh;
 }
 
 .featured-post-card:hover {
@@ -868,7 +868,7 @@ button {
 }
 
 .feat-img-wrap {
-  height: 320px;
+  height: 280px;
   position: relative;
   overflow: hidden;
 }
