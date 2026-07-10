@@ -61,50 +61,56 @@ body{
 
 
 .auth-card{
-  width:100%;
-  max-width:420px;
-  background:var(--bg-card);
-  padding:2rem;
-  border-radius:20px;
-  border:1px solid var(--border-color);
-}
-.logo-box {
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap:8px;
-  margin-bottom:1rem;
-}
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 1px;
-  text-decoration: none;
-}
+    width:100%;
 
-.logo-img {
-  width: 36px;   /* adjust as needed */
-  height: 36px;
-  object-fit: cover;
-  border-radius: 6px;
+    max-width:460px;
+
+    padding:2.5rem;
+
+    border-radius:24px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-color);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+.logo-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:1.5rem;
 }
 
-
-.logo-text {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
 }
 
-.logo-accent {
-  color: var(--brand-primary);
-   font-family: var(--font-display);
-   font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+.logo-img{
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    object-fit:cover;
+}
+
+.logo-text,
+.logo-accent{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    font-weight:700;
+    letter-spacing:-0.02em;
+}
+
+.logo-text{
+    color:var(--text-primary);
+}
+
+.logo-accent{
+    color:var(--brand-primary);
 }
 
 .header{
@@ -113,16 +119,42 @@ body{
 }
 .header h2{margin-bottom:5px; color: var(--text-primary);font-weight: 700; font-size: 18px;padding-left: 0.8rem;}
 .header p{color:var(--text-muted);font-size:13px;padding-left: 0.8rem;}
-
-.form-group{margin-bottom:1rem; color: var(--text-primary);}
-        
-input{
-  width:100%;
-  padding:10px;
-  border-radius:10px;
-  border:1px solid var(--border-color);
-  background:var(--input-bg);
+.form-group{
+    margin-bottom:1rem;
 }
+
+.form-group label{
+    display:block;
+    margin-bottom:.45rem;
+    font-size:.85rem;
+    font-weight:600;
+    color:var(--text-primary);
+}
+
+.form-input,
+input{
+    width:100%;
+    height:52px;
+    padding:0 16px;
+    border-radius:12px;
+    border:1px solid var(--border-color);
+    background:var(--input-bg);
+    color:var(--text-primary);
+    font-size:.95rem;
+    outline:none;
+    transition:.3s;
+}
+
+.form-input:focus,
+input:focus{
+
+    border-color:var(--brand-primary);
+
+    box-shadow:0 0 0 4px rgba(200,151,58,.15);
+}
+
+        
+
 
 
 .pass-wrap{position:relative;}
@@ -140,13 +172,34 @@ input{
   color: var(--text-primary);
 }
 
-.btn{
-  width:100%;
-  padding:10px;
-  background:var(--brand-primary);
-  color:#fff;
-  border:none;
-  border-radius:10px;
+.btn,
+.btn-submit{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#C8973A;
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.btn:hover,
+.btn-submit:hover{
+
+    opacity:.9;
 }
 
 .social{
@@ -199,18 +252,192 @@ color: var(--brand-primary);
     padding:1.2rem;
   }
   .social{flex-direction:column;}
+
+body{
+
+align-items:flex-start;
 }
 
+.auth-card{
+
+border-radius:0;
+
+min-height:100vh;
+
+padding:1.2rem;
+
+margin:0;
+}
+
+.logo-img{
+
+width:38px;
+height:38px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.05rem;
+}
+
+.social,
+.social-grid{
+
+grid-template-columns:1fr;
+display:grid;
+}
+
+.form-input,
+input{
+
+height:46px;
+padding:0 14px;
+}
+
+}
+/* Remember & Forgot Password Row */
+.remember-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:1rem 0 1.25rem;
+    gap:1rem;
+}
+
+.remember-me{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    color:var(--text-primary);
+    font-size:0.9rem;
+    font-weight:500;
+}
+
+.remember-me input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    accent-color:#C8973A;
+    cursor:pointer;
+    margin:0;
+}
+
+.forgot-link{
+    text-decoration:none;
+    color:#ef4444;
+    font-size:0.9rem;
+    font-weight:500;
+    transition:.3s;
+}
+
+.forgot-link:hover{
+    color:#dc2626;
+    text-decoration:underline;
+}
+@media (max-width:480px){
+
+.remember-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.75rem;
+}
+
+.forgot-link{
+    align-self:flex-end;
+}
+
+}
 @media(max-width:360px){
   .auth-card{padding:1.5rem;}
 }
+@media (max-width:480px){
 
-@media(min-width:768px){
-  .auth-card{max-width:400px;}
+.auth-card{
+
+max-width:100%;
+
+margin:20px;
+
+padding:1.5rem;
 }
 
-@media(min-width:1024px){
-  .auth-card{max-width:420px;}
+.logo-img{
+
+width:42px;
+height:42px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.2rem;
+}
+
+.form-input,
+input{
+
+height:48px;
+font-size:.9rem;
+}
+
+.btn,
+.btn-submit{
+
+height:48px;
+}
+
+}
+@media (max-width:768px){
+
+.auth-card{
+
+max-width:420px;
+
+padding:2rem;
+}
+
+.form-row{
+
+grid-template-columns:1fr;
+gap:0;
+}
+
+.logo-img{
+
+width:46px;
+height:46px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.35rem;
+}
+
+}
+
+@media (max-width:1024px){
+
+.auth-card{
+
+max-width:450px;
+
+padding:2.2rem;
+}
+
+.logo-img{
+
+width:48px;
+height:48px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.45rem;
+}
+
 }
 
 </style>
@@ -251,11 +478,15 @@ color: var(--brand-primary);
       <span class="eye" id="eye">👁</span>
     </div>
 
-    <div class="row">
-      <label><input type="checkbox"> Remember </label>
-      <a href="#" id="forgot">Forgot Password?</a>
-    </div>
 
+<div class="remember-row">
+    <label class="remember-me">
+        <input type="checkbox">
+        <span>Remember Me</span>
+    </label>
+
+    <a href="#" class="forgot-link">Forgot Password?</a>
+</div>
     <button class="btn">Login</button>
 
   </form>

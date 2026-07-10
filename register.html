@@ -61,36 +61,40 @@
             transition: background-color 0.3s;
         }
 
-        .auth-card {
-            background: var(--bg-card);
-            width: 100%;
-            max-width: 480px;
-            border-radius: 24px;
-            padding: 2.5rem;
-            position: relative;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
+       .auth-card{
 
-        .top-controls {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            display: flex;
-            gap: 8px;
-            z-index: 999;
-        }
+    width:100%;
 
-        .ctrl-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            cursor: pointer;
-            color: var(--text-primary);
-        }
+    max-width:460px;
+
+    padding:2.5rem;
+
+    border-radius:24px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-color);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+ .top-controls{
+  position:fixed;
+  top:15px;
+  right:15px;
+  display:flex;
+  gap:8px;
+  z-index:999;
+}
+.ctrl-btn{
+  width:36px;height:36px;
+  border-radius:10px;
+  border:1px solid var(--border-color);
+  background:var(--bg-card);
+  cursor:pointer;
+  color: var(--text-primary);
+}
+
 
         .top-actions {
             position: absolute;
@@ -118,46 +122,42 @@
             color: var(--brand-primary);
             border-color: var(--brand-primary);
         }
+.logo-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:1.5rem;
+}
 
-        .logo-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 1rem;
-        }
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+}
 
-        .logo-link {
-            display: flex;
-            align-items: center;
-            gap: 1px;
-            text-decoration: none;
-        }
+.logo-img{
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    object-fit:cover;
+}
 
-        .logo-img {
-            width: 36px;
-            /* adjust as needed */
-            height: 36px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
+.logo-text,
+.logo-accent{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    font-weight:700;
+    letter-spacing:-0.02em;
+}
 
-        .logo-text {
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            color: var(--text-primary);
-        }
+.logo-text{
+    color:var(--text-primary);
+}
 
-        .logo-accent {
-            color: var(--brand-primary);
-            font-family: var(--font-display);
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
+.logo-accent{
+    color:var(--brand-primary);
+}
         .header-content {
             text-align: center;
             margin-bottom: 1.5rem;
@@ -176,42 +176,47 @@
             font-size: 0.85rem;
             padding-left: 0.8rem;
         }
+.form-group{
+    margin-bottom:1rem;
+}
 
-        .form-group {
-            margin-bottom: 0.85rem;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+.form-group label{
+    display:block;
+    margin-bottom:.45rem;
+    font-size:.85rem;
+    font-weight:600;
+    color:var(--text-primary);
+}
 
-        .form-group label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            color: var(--text-primary);
-        }
+.form-input,
+input{
+    width:100%;
+    height:52px;
+    padding:0 16px;
+    border-radius:12px;
+    border:1px solid var(--border-color);
+    background:var(--input-bg);
+    color:var(--text-primary);
+    font-size:.95rem;
+    outline:none;
+    transition:.3s;
+}
+
+.form-input:focus,
+input:focus{
+
+    border-color:var(--brand-primary);
+
+    box-shadow:0 0 0 4px rgba(200,151,58,.15);
+}
+       
 
         .input-container {
             position: relative;
             width: 100%;
         }
 
-        .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            background: var(--input-bg);
-            color: var(--text-primary);
-            outline: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .form-input:focus {
-            border-color: var(--brand-primary);
-            box-shadow: 0 0 0 4px var(--brand-glow);
-        }
+        
 
         .eye-icon {
             position: absolute;
@@ -318,24 +323,163 @@
             font-weight: 700;
         }
         
-.auth-card {
+/* .auth-card {
     width: 100%;
     max-width: 560px;
     padding: 2.5rem;
     border-radius: 20px;
-}
+} */
 
 /* First Name + Last Name Row */
-.form-row {
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+}
+/* .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-}
+} */
 
 .form-row .form-group {
     margin-bottom: 0.85rem;
 }
+@media (max-width:1024px){
 
+.auth-card{
+
+max-width:450px;
+
+padding:2.2rem;
+}
+
+.logo-img{
+
+width:48px;
+height:48px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.45rem;
+}
+
+}
+@media (max-width:768px){
+
+.auth-card{
+
+max-width:420px;
+
+padding:2rem;
+}
+
+.form-row{
+
+grid-template-columns:1fr;
+gap:0;
+}
+
+.logo-img{
+
+width:46px;
+height:46px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.35rem;
+}
+
+}
+@media (max-width:480px){
+
+.auth-card{
+
+max-width:100%;
+
+margin:20px;
+
+padding:1.5rem;
+}
+
+.logo-img{
+
+width:42px;
+height:42px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.2rem;
+}
+
+.form-input,
+input{
+
+height:48px;
+font-size:.9rem;
+}
+
+.btn,
+.btn-submit{
+
+height:48px;
+}
+
+}
+@media (max-width:320px){
+
+body{
+
+align-items:flex-start;
+}
+
+.auth-card{
+
+border-radius:0;
+
+min-height:100vh;
+
+padding:1.2rem;
+
+margin:0;
+}
+
+.logo-img{
+
+width:38px;
+height:38px;
+}
+
+.logo-text,
+.logo-accent{
+
+font-size:1.05rem;
+}
+
+.social,
+.social-grid{
+
+grid-template-columns:1fr;
+display:grid;
+}
+
+.form-input,
+input{
+
+height:46px;
+padding:0 14px;
+}
+
+}
 @media (max-width: 768px) {
     .form-row {
         grid-template-columns: 1fr;
@@ -346,11 +490,7 @@
         max-width: 420px;
     }
 }
-        @media (max-width: 1024px) {
-            .auth-card {
-                max-width: 440px;
-            }
-        }
+      
 
         @media (max-width: 768px) {
             .auth-card {
@@ -408,21 +548,21 @@
         </div>
 
         <form id="signupForm" novalidate>
-            <div class="form-row">
+        
 
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" class="form-input" placeholder="Enter your FirstName" required>
+                    <label for="firstName">Full Name</label>
+                    <input type="text" id="firstName" class="form-input" placeholder="Enter your FullName" required>
                     <span class="error-text">First name is required.</span>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="lastName">Last Name</label>
                     <input type="text" id="lastName" class="form-input" placeholder="Enter your LastName" required>
                     <span class="error-text">Last name is required.</span>
-                </div>
+                </div> -->
 
-            </div>
+            
 
             <div class="form-group">
                 <label for="email">Email Address</label>
