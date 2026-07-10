@@ -36,51 +36,89 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
+document.addEventListener("DOMContentLoaded", () => {
 
-  const navLinks = document.querySelectorAll(".nav-link");
-  const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
 
-  function updateActiveNav() {
+    // -----------------------------
+    // Highlight current page
+    // -----------------------------
+    function setActivePage() {
 
-    const scrollPos = window.scrollY + 120;
+        let currentPage = window.location.pathname.split("/").pop();
 
-    let current = "";
+        // Handles "/", "/index.html"
+        if (currentPage === "") {
+            currentPage = "index.html";
+        }
 
-    sections.forEach(section => {
+        navLinks.forEach(link => {
+            link.classList.remove("active");
 
-      const top = section.offsetTop;
-      const bottom = top + section.offsetHeight;
+            const href = link.getAttribute("href").replace("./", "");
 
-      if (scrollPos >= top && scrollPos < bottom) {
-        current = section.id;
-      }
+            if (href === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    }
 
-    });
+    // -----------------------------
+    // Scroll Spy (Home page only)
+    // -----------------------------
+    function updateScrollSpy() {
 
-    navLinks.forEach(link => link.classList.remove("active"));
+        let current = "";
 
-    // if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
+        const scrollPos = window.scrollY + 150;
 
-    //     document.querySelector('.nav-link[href="index.html"]')
-    //         ?.classList.add("active");
+        sections.forEach(section => {
 
-    // }
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
 
-    navLinks.forEach(link => {
-      link.classList.remove("active");
+            if (scrollPos >= top && scrollPos < bottom) {
+                current = section.id;
+            }
 
-      const href = link.getAttribute("href");
+        });
 
-      if (href === currentPage) {
-        link.classList.add("active");
-      }
-    });
+        if (current !== "") {
 
-  }
+            navLinks.forEach(link => {
 
-  window.addEventListener("scroll", updateActiveNav);
-  window.addEventListener("load", updateActiveNav);
+                const href = link.getAttribute("href");
+
+                if (href.startsWith("#")) {
+                    link.classList.toggle(
+                        "active",
+                        href === "#" + current
+                    );
+                }
+
+            });
+
+        }
+
+    }
+
+    // Initial highlight
+    setActivePage();
+
+    // Scroll spy only on Home page
+    if (window.location.pathname.endsWith("index.html") ||
+        window.location.pathname === "/" ||
+        window.location.pathname === "") {
+
+        window.addEventListener("scroll", updateScrollSpy, {
+            passive: true
+        });
+
+        updateScrollSpy();
+    }
+
+});
 
 
   const hamburgerBtn = document.getElementById('hamburgerBtn');
