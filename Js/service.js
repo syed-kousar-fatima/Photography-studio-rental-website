@@ -62,41 +62,89 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
- 
-  
-const navLinks = document.querySelectorAll(".nav-link");
-const sections = document.querySelectorAll("section[id]");
+ document.addEventListener("DOMContentLoaded", () => {
 
-function updateActiveNav() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
 
-    const scrollPos = window.scrollY + 120;
+    // -----------------------------
+    // Highlight current page
+    // -----------------------------
+    function setActivePage() {
 
-    let current = "";
+        let currentPage = window.location.pathname.split("/").pop();
 
-    sections.forEach(section => {
-
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-
-        if (scrollPos >= top && scrollPos < bottom) {
-            current = section.id;
+        // Handles "/", "/index.html"
+        if (currentPage === "") {
+            currentPage = "service.html";
         }
 
-    });
+        navLinks.forEach(link => {
+            link.classList.remove("active");
 
-    navLinks.forEach(link => link.classList.remove("active"));
+            const href = link.getAttribute("href").replace("./", "");
 
-    if (window.location.pathname.includes("services.html") || window.location.pathname === "/") {
+            if (href === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    }
 
-        document.querySelector('.nav-link[href="services.html"]')
-            ?.classList.add("active");
+    // -----------------------------
+    // Scroll Spy (Home page only)
+    // -----------------------------
+    function updateScrollSpy() {
+
+        let current = "";
+
+        const scrollPos = window.scrollY + 150;
+
+        sections.forEach(section => {
+
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+
+            if (scrollPos >= top && scrollPos < bottom) {
+                current = section.id;
+            }
+
+        });
+
+        if (current !== "") {
+
+            navLinks.forEach(link => {
+
+                const href = link.getAttribute("href");
+
+                if (href.startsWith("#")) {
+                    link.classList.toggle(
+                        "active",
+                        href === "#" + current
+                    );
+                }
+
+            });
+
+        }
 
     }
 
-}
+    // Initial highlight
+    setActivePage();
 
-window.addEventListener("scroll", updateActiveNav);
-window.addEventListener("load", updateActiveNav);
+    // Scroll spy only on Home page
+    if (window.location.pathname.endsWith("service.html") ||
+        window.location.pathname === "/" ||
+        window.location.pathname === "") {
+
+        window.addEventListener("scroll", updateScrollSpy, {
+            passive: true
+        });
+
+        updateScrollSpy();
+    }
+
+});
 });
 
     document.addEventListener('DOMContentLoaded', () => {

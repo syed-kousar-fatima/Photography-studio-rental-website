@@ -377,10 +377,11 @@ button {
     color:#C8973A;
     background:#F8F2E7;
     border-radius:10px;
+    border:1px solid #C8973A;
 }
 
 [data-theme="dark"] .nav-link.active{
-    background:rgba(200,151,58,.15);
+    background:#F8F2E7;
     color:#C8973A;
 }
 .nav-item{

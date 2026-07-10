@@ -380,10 +380,20 @@ button {
     position: relative;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
     color: var(--brand-primary);
     background: rgba(200, 151, 58, 0.08);
+}
+.nav-link.active{
+    color:#C8973A;
+    background:#F8F2E7;
+    border-radius:10px;
+    border:1px solid #C8973A;
+}
+
+[data-theme="dark"] .nav-link.active{
+    background:#F8F2E7;
+    color:#C8973A;
 }
 .nav-item{
   position:relative;
